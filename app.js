@@ -1,1 +1,1 @@
-require('./eventLoop/1-SetTimeout')
+require('./eventLoop/2-SetInterval')
