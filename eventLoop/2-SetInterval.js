@@ -8,9 +8,9 @@ setInterval(() => {
 
 
 
-// setInterval(myTimer, 1000);
+setInterval(myTimer, 1000);
 
-// function myTimer() {
-//   const date = new Date();
-//   console.log(date.toLocaleTimeString())
-// }
+function myTimer() {
+  const date = new Date();
+  console.log(date.toLocaleTimeString())
+}
