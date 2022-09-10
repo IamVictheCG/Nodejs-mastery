@@ -1,4 +1,2 @@
-// require('./eventLoop/2-SetInterval')
-require('./eventLoop/1-SetTimeout')
-
-
+// require('./eventLoop/read-file')
+require('./eventLoop/server')
