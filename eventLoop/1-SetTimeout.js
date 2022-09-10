@@ -1,7 +1,7 @@
 setTimeout(() => {
     console.log('Hello Victor')
+    console.log(new Date(Date.now()));
 }, 4000);
-// console.log(new Date(Date.now()));
 // console.log(new Date(Date.UTC(22, 9, 9, 0, 0, 0)))
 // console.log(Date)
 // console.log(Date)
