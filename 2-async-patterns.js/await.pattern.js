@@ -1,9 +1,12 @@
-const {readFile} = require('fs')
+const {readFile, writeFile} = require('fs')
 const { reject, get } = require('lodash')
 const { resolve } = require('path')
 const path = require('path')
+const util = require('util')
+const readFilePromise = util.promisify(readFile)
+const writeFilePromise = util.promisify(writeFile)
 
-const getTask = (path) => {
+const getText = (path) => {
     return new Promise((resolve, reject) => {
         readFile(path, "utf8", ((err, data) => {
             if (err) {
@@ -22,10 +25,19 @@ const getTask = (path) => {
 
 
 const start = async () => {
-    getTask("./content/first.txt")
+
+    try {
+        const first = await getText("./content/first.txt")
+        const second = await getText("./content/second.txt")
+        console.log(first, second)
+    } catch (error) {
+        console.log(error)
+    }
 }
+
 start()
 
-getTask("./content/first.txt")
-.then((result) => console.log(result))
-.catch((err) => console.log(err, "Something has gone wrong"))
+
+// getText("./content/first.txt")
+// .then((result) => console.log(result))
+// .catch((err) => console.log(err, "Something has gone wrong"))
