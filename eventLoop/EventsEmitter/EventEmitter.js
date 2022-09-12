@@ -4,11 +4,11 @@ const EventEmitter = require('events')
 
 const customEmitter = new EventEmitter
 
-customEmitter.on('response', () => {
-    console.log("Data recieved")
+customEmitter.on('response', (name, id) => {
+    console.log(`Data recieved; User: ${name} Id: ${id}`)
 })
-customEmitter.on('response', () => {
-    console.log("Analysing data")
+customEmitter.on('response', (age, gender) => {
+    console.log(`Analysing data; Age: ${age}`)
 })
 
 
