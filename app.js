@@ -5,12 +5,5 @@
 // require('./2-async-patterns.js/blocks')
 // require('./2-async-patterns.js/await.pattern')
 // require('./EventsEmitter/EventEmitter')
+// require("./HTTP-Stream")
 
-const http = require("http")
-
-// const server = http.createServer((req, res) => {
-//     res.end("Welcome!")
-// })
-
-
-const server = http.createServer()
