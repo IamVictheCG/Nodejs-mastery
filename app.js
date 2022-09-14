@@ -4,5 +4,13 @@
 // require('./8-fsAsync')
 // require('./2-async-patterns.js/blocks')
 // require('./2-async-patterns.js/await.pattern')
-require('./eventLoop/EventsEmitter/EventEmitter')
+// require('./EventsEmitter/EventEmitter')
 
+const http = require("http")
+
+// const server = http.createServer((req, res) => {
+//     res.end("Welcome!")
+// })
+
+
+const server = http.createServer()
