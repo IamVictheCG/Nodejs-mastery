@@ -12,7 +12,7 @@ server.on("request", (req, res) => {
 server.listen(5223)
 
 
-//This creates a large file returning "Hello World" for an iteration of 100 times
+//This creates a large file returning "Hello World" for an iteration of 100000 times
 // It returns the iterations in the path "./content/bigFile.txt"
 
 function iterations() {
