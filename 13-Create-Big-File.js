@@ -13,7 +13,7 @@ server.listen(5223)
 
 
 //This creates a large file returning "Hello World" for an iteration of 100 times
-// It returns the iterations in the path "./content/bigFile.txt"
+// It
 for (i = 0; i <= 100; i++) {
     writeFileSync("./content/bigFile.txt", `Hello World --- ${i}\n`, {flag: 'a'})
 } return
