@@ -1,3 +1,7 @@
-const {CreatReadStreams} = require("fs")
+const {creatReadStreams} = require("fs")
 
-const
+const Stream = creatReadStreams('.content/bigFile.txt')
+
+Stream.on('data', (result) => {
+    console.log(result)
+})
