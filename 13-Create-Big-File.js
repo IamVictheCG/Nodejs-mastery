@@ -16,7 +16,7 @@ server.listen(5223)
 // It returns the iterations in the path "./content/bigFile.txt"
 
 function iterations() {
-    for (i = 0; i <= 10000; i++) {
+    for (i = 0; i <= 100000; i++) {
         writeFileSync("./content/bigFile.txt", `Hello World --- ${i}\n`, {flag: 'a'})
     } 
     return
