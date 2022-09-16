@@ -14,6 +14,13 @@ server.listen(5223)
 
 //This creates a large file returning "Hello World" for an iteration of 100 times
 // It returns the iterations in the path "./content/bigFile.txt"
-for (i = 0; i <= 10000; i++) {
-    writeFileSync("./content/bigFile.txt", `Hello World --- ${i}\n`, {flag: 'a'})
-} return
+
+function iterations() {
+    for (i = 0; i <= 10000; i++) {
+        writeFileSync("./content/bigFile.txt", `Hello World --- ${i}\n`, {flag: 'a'})
+    } 
+    return
+
+}
+
+iterations()
