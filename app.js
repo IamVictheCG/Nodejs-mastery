@@ -25,6 +25,8 @@ const server = http.createServer((req, res) => {
         res.end("Welcome to the about page!!!")
     }
     res.writeHead(404, {'contet-type':'text/html'})
+    res.write('<h1>Page not found</h1>')
+    res.end("Try again")
 })
 
 // const Port = 5011
