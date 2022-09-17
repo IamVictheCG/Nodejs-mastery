@@ -12,10 +12,19 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-    console.log("Server is runing")
-    res.writeHead(200, {'contet-type':'text/html'})
-    res.write("<h2>Home Page</h2>")
-    res.end("Good day to you User")
+    const url = req.url
+    if (url === "/") {
+        console.log("Server is runing, Home Page")
+        res.writeHead(200, {'contet-type':'text/html'})
+        res.write('<h1>Home Page</h1>')
+        res.end("Good day to you User")
+    } else if(url === '/ about') {
+        console.log("Server is runing, About Page")
+        res.writeHead(200, {'contet-type':'text/html'})
+        res.write('<h1>About Page</h1>')
+        res.end("Welcome to the about page!!!")
+    }
+    res.writeHead(404, {'contet-type':'text/html'})
 })
 
 // const Port = 5011
