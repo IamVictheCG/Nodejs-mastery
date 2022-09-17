@@ -9,7 +9,15 @@
 // require('./14-CreateReadStream')
 // require("./HTTP-Stream")
 
+const http = require('http');
 
+const server = http.createServer((req, res) => {
+    console.log("Server is runing")
+    res.writeHead(200, {'contet-type':'text/html'})
+    res.write("<h2>Home Page</h2>")
+    res.end("Good day to you User")
+})
 
+// const Port = 5011
+server.listen(5011)
 
- 
