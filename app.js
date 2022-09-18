@@ -17,14 +17,14 @@ app.listen(PORT,() => {
 
 app.get('/', (req, res) => {
     console.log(`Homepage accessed`)
-    res.status(200).send(`You are now at the home page`)
+    res.status(200).send(`<h2>You are now at the home page</h2>`)
 })
 
 app.get('/about', (req, res) => {
     console.log(`About page accessed`)
-    res.status(200).send(`You are now at the about page`)
+    res.status(200).send(`<h2>You are now at the about page</h2>`)
 })
 
 app.all('*', (req, res) => {
-    res.status(404).send(`Resourece page not found`)
+    res.status(404).send(`<h2>Resourece page not found</h2>`)
 })
