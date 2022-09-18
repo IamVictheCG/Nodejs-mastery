@@ -13,10 +13,10 @@ const http = require('http');
 const { readFileSync, symlink } = require('fs')
 
 const homePage = readFileSync('./2-Express-Tutorial/navbar-app/index.html')
-const styles = readFileSync('./2-Express-Tutorial/navbar-app/styles.css')
-const logo = readFileSync('./2-Express-Tutorial/navbar-app/logo.svg')
+const homestyles = readFileSync('./2-Express-Tutorial/navbar-app/styles.css')
+const homelogo = readFileSync('./2-Express-Tutorial/navbar-app/logo.svg')
 
-const browse = readFileSync('./2-Express-Tutorial/navbar-app/browser-app.js')
+const homelogic = readFileSync('./2-Express-Tutorial/navbar-app/browser-app.js')
 const server = http.createServer((req, res) => {
     const url = req.url
     if (url === "/") {
@@ -36,21 +36,21 @@ const server = http.createServer((req, res) => {
     else if(url === '/styles.css') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'text/css'})
-        res.write(styles)
+        res.write(homestyles)
         res.end()
     } 
     //Image/Logo
     else if(url === '/logo.svg') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'image/svg+xml'})
-        res.write(logo)
+        res.write(homelogo)
         res.end("Welcome to the about page!!!")
     } 
     //logic
-    else if(url === '/browse-app.js') {
+    else if(url === '/browser-app.js') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'text/javascript'})
-        res.write(browse)
+        res.write(homelogic)
         res.end("Welcome to the about page!!!")
     }
     else {
