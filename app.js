@@ -41,7 +41,7 @@ const server = http.createServer((req, res) => {
     //Logo
     else if(url === '/logo.svg') {
         console.log("Server is runing, About Page")
-        res.writeHead(200, {'contet-type':'text/svg+xml'})
+        res.writeHead(200, {'contet-type':'image/svg+xml'})
         res.write(logo)
         res.end("Welcome to the about page!!!")
     } 
