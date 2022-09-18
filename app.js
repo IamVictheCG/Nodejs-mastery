@@ -9,6 +9,6 @@ app.listen(PORT,() => {
 
 // app.get
 // app.post
-// app.get
+// app.put
 // app.get
 // app.get
