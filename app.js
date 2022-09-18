@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-//     console.log(`About page accessed`)
+    console.log(`About page accessed`)
 //     res.status(200).send(`You are now at the about page`)
 // })
 
