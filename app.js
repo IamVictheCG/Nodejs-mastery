@@ -10,9 +10,12 @@
 // require("./HTTP-Stream")
 // require('./2-Express-Tutorial/navbar-app')
 const http = require('http');
-const { readFileSync } = require('fs')
+const { readFileSync, symlink } = require('fs')
 
 const homePage = readFileSync('./2-Express-Tutorial/navbar-app/index.html')
+const styles = readFileSync('./2-Express-Tutorial/navbar-app/styles.css')
+const logo = readFileSync('./2-Express-Tutorial/navbar-app/logo.svg')
+const browse = readFileSync('./2-Express-Tutorial/navbar-app/browser-app.js')
 const server = http.createServer((req, res) => {
     const url = req.url
     if (url === "/") {
@@ -24,6 +27,21 @@ const server = http.createServer((req, res) => {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'text/html'})
         res.write('<h1>About Page</h1>')
+        res.end("Welcome to the about page!!!")
+    } else if(url === '/styles') {
+        console.log("Server is runing, About Page")
+        res.writeHead(200, {'contet-type':'text/css'})
+        res.write(styles)
+        res.end("Welcome to the about page!!!")
+    } else if(url === '/logo') {
+        console.log("Server is runing, About Page")
+        res.writeHead(200, {'contet-type':'text/html'})
+        res.write(logo)
+        res.end("Welcome to the about page!!!")
+    } else if(url === '/browse') {
+        console.log("Server is runing, About Page")
+        res.writeHead(200, {'contet-type':'text/js'})
+        res.write(browse)
         res.end("Welcome to the about page!!!")
     }
     else {
