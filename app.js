@@ -15,6 +15,7 @@ const { readFileSync, symlink } = require('fs')
 const homePage = readFileSync('./2-Express-Tutorial/navbar-app/index.html')
 const styles = readFileSync('./2-Express-Tutorial/navbar-app/styles.css')
 const logo = readFileSync('./2-Express-Tutorial/navbar-app/logo.svg')
+
 const browse = readFileSync('./2-Express-Tutorial/navbar-app/browser-app.js')
 const server = http.createServer((req, res) => {
     const url = req.url
