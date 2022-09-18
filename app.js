@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     res.status(200).send(`You are now at the home page`)
 })
 
-// app.get('/about', (req, res) => {
+app.get('/about', (req, res) => {
 //     console.log(`About page accessed`)
 //     res.status(200).send(`You are now at the about page`)
 // })
