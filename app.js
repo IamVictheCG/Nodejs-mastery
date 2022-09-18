@@ -23,22 +23,30 @@ const server = http.createServer((req, res) => {
         res.writeHead(200, {'contet-type':'text/html'})
         res.write(homePage)
         res.end("Good day to you User")
-    } else if(url === '/about') {
+    } 
+    //about
+    else if(url === '/about') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'text/html'})
         res.write('<h1>About Page</h1>')
         res.end("Welcome to the about page!!!")
-    } else if(url === '/styles') {
+    } 
+    //Styles
+    else if(url === '/styles.css') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'text/css'})
         res.write(styles)
-        res.end("Welcome to the about page!!!")
-    } else if(url === '/logo') {
+        res.end()
+    } 
+    //Logo
+    else if(url === '/logo.svg') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'text/html'})
         res.write(logo)
         res.end("Welcome to the about page!!!")
-    } else if(url === '/browse') {
+    } 
+    //browse 
+    else if(url === '/browse-app.js') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'text/js'})
         res.write(browse)
