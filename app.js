@@ -8,3 +8,7 @@ app.listen(PORT,() => {
 })
 
 // app.get
+// app.post
+// app.get
+// app.get
+// app.get
