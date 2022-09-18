@@ -39,14 +39,14 @@ const server = http.createServer((req, res) => {
         res.write(styles)
         res.end()
     } 
-    //Logo
+    //Image/Logo
     else if(url === '/logo.svg') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'image/svg+xml'})
         res.write(logo)
         res.end("Welcome to the about page!!!")
     } 
-    //browse 
+    //logic
     else if(url === '/browse-app.js') {
         console.log("Server is runing, About Page")
         res.writeHead(200, {'contet-type':'text/javascript'})
