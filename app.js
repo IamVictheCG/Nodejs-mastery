@@ -26,5 +26,5 @@ app.get('/about', (req, res) => {
 })
 
 app.all('*', (req, res) => {
-//     res.status(404).send(`Resourece page not found`)
+    res.status(404).send(`Resourece page not found`)
 // })
