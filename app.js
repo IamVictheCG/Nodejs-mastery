@@ -12,3 +12,4 @@ app.listen(PORT,() => {
 // app.put
 // app.delete
 // app.use
+// app.all
