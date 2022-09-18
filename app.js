@@ -10,5 +10,5 @@ app.listen(PORT,() => {
 // app.get
 // app.post
 // app.put
-// app.get
+// app.delete
 // app.get
