@@ -25,6 +25,6 @@ app.get('/about', (req, res) => {
     res.status(200).send(`You are now at the about page`)
 })
 
-// app.all('*', (req, res) => {
+app.all('*', (req, res) => {
 //     res.status(404).send(`Resourece page not found`)
 // })
