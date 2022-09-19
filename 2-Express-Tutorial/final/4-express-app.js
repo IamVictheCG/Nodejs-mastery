@@ -11,7 +11,8 @@ app.listen(PORT, (req, res) => {
 
 app.get('/', (req, res) => {
     res.send("Hello")
-    res.sendFile(path.join(__dirname, './navbar/index.html'))
+    res.sendFile(path.join(__dirname, './navbar-app/index.html'))
+    console.log("Page up")
 })
 
 app.all('#', (req, res) => {
