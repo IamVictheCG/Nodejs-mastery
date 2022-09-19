@@ -5,13 +5,13 @@ const path = require('path ')
 const PORT = 5011
 
 
-app.listen(PORT, (req, res) => {
+app.listen(PORT, () => {
     console.log('sever accessed')
 })
 
 app.get('/', (req, res) => {
-    res.send("Hello")
-    res.sendFile(path.join(__dirname, './navbar-app/index.html'))
+    // res.send("Hello")
+    res.sendFile(path.resolve(__dirname, '../navbar-app/index.html'))
     console.log("Page up")
 })
 
