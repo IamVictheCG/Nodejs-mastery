@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const path = require('path ')
 
-const PORT = 5000
+const PORT = 5011
 
 
 app.listen(PORT, (req, res) => {
@@ -11,7 +11,7 @@ app.listen(PORT, (req, res) => {
 
 app.get('/', (req, res) => {
     res.send("Hello")
-    res.sendFile(__dirname, '')
+    res.sendFile(path.join(__dirname, './navbar/index.html'))
 })
 
 app.all('#', (req, res) => {
