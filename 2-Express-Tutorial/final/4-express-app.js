@@ -6,6 +6,7 @@ const PORT = 5011
 
 
 // app.use(express.static('./Public'))
+
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('./2-Express-Tutorial/navbar-app/index.html'))
     console.log(path)
