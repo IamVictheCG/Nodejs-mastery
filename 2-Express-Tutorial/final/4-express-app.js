@@ -5,6 +5,7 @@ const path = require("path")
 const PORT = 5011
 
 
+//setup static and middleware
 app.use(express.static('./Public'))
 
 app.get('/', (req, res) => {
