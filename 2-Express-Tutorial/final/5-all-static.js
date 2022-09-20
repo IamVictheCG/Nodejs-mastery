@@ -13,6 +13,8 @@ app.use(express.static('./Public'))
 //     res.sendFile(path.resolve('./2-Express-Tutorial/navbar-app/index.html'))
 //     console.log(path)
 //     console.log("Page up")
+//     adding to static assets
+//     SSR 
 // })
 
 app.all('*', (req, res) => {
