@@ -9,7 +9,7 @@ const PORT = 5011
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname,'./2-Express-Tutorial/navbar-app/index.html'))
     console.log(path)
-    // console.log("Page up")
+    console.log("Page up")
 })
 //  dh 
 
