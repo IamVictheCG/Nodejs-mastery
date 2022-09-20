@@ -9,12 +9,11 @@ const PORT = 5011
 //setup static and middleware
 app.use(express.static('./Public'))
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve('./2-Express-Tutorial/navbar-app/index.html'))
-    console.log(path)
-    console.log("Page up")
-})
-//  dh 
+// app.get('/', (req, res) => {
+//     res.sendFile(path.resolve('./2-Express-Tutorial/navbar-app/index.html'))
+//     console.log(path)
+//     console.log("Page up")
+// })
 
 app.all('*', (req, res) => {
     res.status(404).send('Page not found')
