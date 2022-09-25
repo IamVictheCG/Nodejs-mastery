@@ -7,7 +7,7 @@ const PORT = 5011
 
 
 //setup static and middleware
-// app.use(express.static('./Public'))
+app.use(express.static('./Public'))
 // app.use(express.static('./2-Express-Tutorial/navbar-app'))
 
 // app.get('/', (req, res) => {
