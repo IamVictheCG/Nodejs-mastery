@@ -6,7 +6,7 @@ const {products, people} = require('../../data')
 
 app.get('/', (req, res) => {
     console.log("Server has been hit")
-    res.json(products)
+    res.send('<h1><a href = "/users/product">Home Page</a></h1>')
 
 })
 
