@@ -2,11 +2,11 @@ const express = require('express')
 const app = express()
 const PORT = 5011
 
-
+const {products, people} = require('../../data')
 
 app.get('/', (req, res) => {
     console.log("Server has been hit")
-    res.json([{name: 'Victor'}, {name: 'David'}])
+    res.json(products)
 
 })
 
