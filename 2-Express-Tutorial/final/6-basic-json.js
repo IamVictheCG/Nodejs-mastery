@@ -25,9 +25,13 @@ app.get('/api/products/1', (req, res) => {
     res.json(newProduct1)
 })
 app.get('/api/products/2/:id', (req, res) => {
-    const { id } = req.params
     console.log(req.params)
-    const oneProduct = products.find((products) => products.id === Number(id))
+    const mappedProduct = products.map((newProduct) => {
+        const {id, image, name} = newProduct
+        return {id, image, name}
+    })
+    const { id } = req.params
+    const oneProduct = mappedProduct.find((products) => products.id === Number(id))
     res.send(oneProduct)
 })
 app.get('/api/products/3', (req, res) => {
@@ -35,7 +39,7 @@ app.get('/api/products/3', (req, res) => {
     res.json(oneProduct)
 })
 app.get('/api/products/4/:id', (req, res) => {
-    const {id} = req.params
+    const { id } = req.params
     const oneProduct = products.find((products) => products.id === Number(id))
     // return { id, image, desc }
     res.send(oneProduct)
