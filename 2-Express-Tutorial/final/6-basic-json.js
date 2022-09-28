@@ -56,6 +56,9 @@ app.get('/api/products', (req, res) => {
 //     res.send(oneProduct)
 // })
 
+
+                            //OR
+
 app.get('/api/products/:id', (req, res) => {
     const { id } = req.params
     const oneProduct = products.find(
