@@ -24,21 +24,20 @@ app.get('/api/products/1', (req, res) => {
     const newProduct1 = mappedProduct.find((products) => products.id === 1)
     res.json(newProduct1)
 })
-app.get('/api/products/2/', (req, res) => {
+app.get('/api/products/2/:id', (req, res) => {
+    const { id } = req.params
     console.log(req.params)
-    const oneProduct = products.find((products) => products.id === 2)
+    const oneProduct = products.find((products) => products.id === Number(id))
     res.send(oneProduct)
 })
 app.get('/api/products/3', (req, res) => {
     const oneProduct = products.find((products) => products.id === 3)
     res.json(oneProduct)
 })
-app.get('/api/products/4/', (req, res) => {
-        const {ProductId} = req.params
-    const oneProduct = products.find(products.id === 4, () => {
-        const {id, image, desc} = singleProduct
-        return { id, image, desc }
-    })
+app.get('/api/products/4/:id', (req, res) => {
+    const {id} = req.params
+    const oneProduct = products.find((products) => products.id === Number(id))
+    // return { id, image, desc }
     res.send(oneProduct)
 })
 
