@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 5000
+const PORT = 1000
 
 const {products, people} = require('../../data')
 
@@ -25,7 +25,6 @@ app.get('/api/products/1', (req, res) => {
     res.json(newProduct1)
 })
 app.get('/api/products/2/:id', (req, res) => {
-    console.log(req.params)
     const mappedProduct = products.map((newProduct) => {
         const {id, image, name} = newProduct
         return {id, image, name}
@@ -33,16 +32,27 @@ app.get('/api/products/2/:id', (req, res) => {
     const { id } = req.params
     const oneProduct = mappedProduct.find((products) => products.id === Number(id))
     res.send(oneProduct)
+    console.log(req.params)
 })
-app.get('/api/products/3', (req, res) => {
-    const oneProduct = products.find((products) => products.id === 3)
-    res.json(oneProduct)
+app.get('/api/products/3/:id', (req, res) => {
+    const mappedProduct = products.map((newProduct) => {
+        const {id, image, name} = newProduct
+        return {id, image, name}
+    })
+    const { id } = req.params
+    const oneProduct = mappedProduct.find((products) => products.id === Number(id))
+    res.send(oneProduct)
+    console.log(req.params)
 })
 app.get('/api/products/4/:id', (req, res) => {
+    const mappedProduct = products.map((newProduct) => {
+        const {id, image, name} = newProduct
+        return {id, image, name}
+    })
     const { id } = req.params
-    const oneProduct = products.find((products) => products.id === Number(id))
-    // return { id, image, desc }
+    const oneProduct = mappedProduct.find((products) => products.id === Number(id))
     res.send(oneProduct)
+    console.log(req.params)
 })
 
 app.get('/api/products/:id', (req, res) => {
