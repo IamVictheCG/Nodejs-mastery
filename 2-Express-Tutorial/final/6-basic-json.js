@@ -26,7 +26,7 @@ app.get('/api/products/1', (req, res) => {
     })
     const newProduct1 = mappedProduct.find((products) => products.id === 1)
     // newProduct1 == products.find((products) => products.id === 1)
-    res.json(mappedProduct)
+    res.json(nweP)
 })
 app.get('/api/products/2/', (req, res) => {
     console.log(req.params)
