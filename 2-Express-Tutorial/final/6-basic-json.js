@@ -16,54 +16,51 @@ app.get('/api/products', (req, res) => {
     })    
     res.send(mappedproducts)
 })
-app.get('/api/products/1', (req, res) => {
-    const mappedProduct = products.map((newProduct) => {
-        const {id, image, name} = newProduct
-        return {id, image, name}
-    })
-    const newProduct1 = mappedProduct.find((products) => products.id === 1)
-    res.json(newProduct1)
-})
-app.get('/api/products/2/:id', (req, res) => {
-    const mappedProduct = products.map((newProduct) => {
-        const {id, image, name} = newProduct
-        return {id, image, name}
-    })
-    const { id } = req.params
-    const oneProduct = mappedProduct.find((products) => products.id === Number(id))
-    res.send(oneProduct)
-    console.log(req.params)
-})
-app.get('/api/products/3/:id', (req, res) => {
-    const mappedProduct = products.map((newProduct) => {
-        const {id, image, name} = newProduct
-        return {id, image, name}
-    })
-    const { id } = req.params
-    const oneProduct = mappedProduct.find((products) => products.id === Number(id))
-    res.send(oneProduct)
-    console.log(req.params)
-})
-app.get('/api/products/4/:id', (req, res) => {
-    const mappedProduct = products.map((newProduct) => {
-        const {id, image, name} = newProduct
-        return {id, image, name}
-    })
-    const { id } = req.params
-    const oneProduct = mappedProduct.find((products) => products.id === Number(id))
-    res.send(oneProduct)
-    console.log(req.params)
-})
+
+// app.get('/api/products/1', (req, res) => {
+//     const mappedProduct = products.map((newProduct) => {
+//         const {id, image, name} = newProduct
+//         return {id, image, name}
+//     })
+//     const newProduct1 = mappedProduct.find((products) => products.id === 1)
+//     res.json(newProduct1)
+// })
+// app.get('/api/products/2/:id', (req, res) => {
+//     const mappedProduct = products.map((newProduct) => {
+//         const {id, image, name} = newProduct
+//         return {id, image, name}
+//     })
+//     const { id } = req.params
+//     const oneProduct = mappedProduct.find((products) => products.id === Number(id))
+//     console.log(req.params)
+//     res.json(oneProduct)
+// })
+// app.get('/api/products/3/:id', (req, res) => {
+//     const mappedProduct = products.map((newProduct) => {
+//         const {id, image, name} = newProduct
+//         return {id, image, name}
+//     })
+//     const { id } = req.params
+//     const oneProduct = mappedProduct.find((products) => products.id === Number(id))
+//     console.log(req.params)
+//     res.send(oneProduct)
+// })
+// app.get('/api/products/4/:id', (req, res) => {
+//     const mappedProduct = products.map((newProduct) => {
+//         const {id, image, name} = newProduct
+//         return {id, image, name}
+//     })
+//     const { id } = req.params
+//     const oneProduct = mappedProduct.find((products) => products.id === Number(id))
+//     console.log(req.params)
+//     res.send(oneProduct)
+// })
 
 app.get('/api/products/:id', (req, res) => {
     const { id } = req.params
     const oneProduct = products.find(
         (product) => product.id === Number(id)
         )
-    //     () => {
-    //     const {id, image, desc} = singleProduct
-    //     return { id, image, desc }
-    // })
     res.send(oneProduct)
 })
 
