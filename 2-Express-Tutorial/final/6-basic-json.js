@@ -17,16 +17,13 @@ app.get('/api/products', (req, res) => {
     res.send(mappedproducts)
 })
 app.get('/api/products/1', (req, res) => {
-    // const oneProduct = products.find((products) => products.id === 1)
-    // oneProduct == mappedProduct
     const mappedProduct = products.map((newProduct) => {
         const {id, image, name} = newProduct
         return {id, image, name}
-        // console.log('fddd')
     })
     const newProduct1 = mappedProduct.find((products) => products.id === 1)
     // newProduct1 == products.find((products) => products.id === 1)
-    res.json(nweP)
+    res.json(newProduct1)
 })
 app.get('/api/products/2/', (req, res) => {
     console.log(req.params)
