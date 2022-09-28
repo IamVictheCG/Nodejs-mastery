@@ -24,7 +24,7 @@ app.get('/api/products/1', (req, res) => {
         return {id, image, name}
         // console.log('fddd')
     })
-    const newProduct1 = map
+    const newProduct1 = mappedProduct
     // newProduct1 == products.find((products) => products.id === 1)
     res.json(mappedProduct)
 })
