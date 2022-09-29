@@ -64,7 +64,17 @@ app.get('/api/products/:id', (req, res) => {
     const oneProduct = products.find(
         (product) => product.id === Number(id)
         )
+        if (!oneProduct) {
+            res.status(404).send(
+                "Product does not exist"
+            )
+        }
     res.send(oneProduct)
+})
+
+app.get('/api/products/:id/reviews/:reviewid', (req, res) => {
+    console.log(req.params)
+    res.send('Nice Product')
 })
 
 
