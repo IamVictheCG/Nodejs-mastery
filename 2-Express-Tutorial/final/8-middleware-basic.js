@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
     const dateD =  new Date().getDate()
     const dateM = new Date().getMonth() + 1
     const dateY =  new Date().getFullYear()
+    const time = new Date().getTime()
 
     console.log("You are on the home page")
     console.log(`${method}${url}---${dateD}/${dateM}/${dateY}`)
