@@ -4,7 +4,7 @@ const app = express()
 const PORT = 1000
 
 const alldate = require('../../Logger')
-const alldate = require('../../Logger')
+const alldate = require('../../authorize')
 
 app.use('/', alldate)
 app.get('/', (req, res) => {
