@@ -116,7 +116,7 @@ app.get('/api/v1/query', (req, res) => {
             message: "Products retrieved successfully",
             statusCode: 200,
             data: [...sortedProdducts]
-        })
+    })
 })
 
 app.listen(PORT, () => {
