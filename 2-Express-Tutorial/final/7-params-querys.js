@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const fs = require('fs')
 require('../../1-Node-Tutorial/content/subFolder/test.txt')
-// const PORT = 1000
+const PORT = 1000
 
 app.get('/api/products/:id/reviews/:reviewid', (req, res) => {
     console.log(req.params)
