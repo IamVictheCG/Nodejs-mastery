@@ -88,9 +88,16 @@ app.get('/api/v1/query', (req, res) => {
         sortedProdducts = sortedProdducts.filter((products) => {
             return products.name.startsWith(search)
         })
-        return sortedProdducts
     }
-    res.send("Hello victor")
+    if (limit) {
+        sortedProdducts = sortedProdducts.slice(0, Number(limit))
+    }
+    
+    if(sortedProdducts.length < 1) {
+        res.status(200).json("No products were found")
+    }
+    console.log(sortedProdducts);
+    res.send(sortedProdducts)
 })
 
 app.listen(PORT, () => {
