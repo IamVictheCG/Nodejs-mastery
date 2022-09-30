@@ -28,7 +28,7 @@ app.get('/api/v1/query', (req, res) => {
         //         message: "Products retrieved",
         //         statusCode: 200,
         //         data: [...sortedProdducts]
-        //     })yy
+        //     })
     }
     
     if(sortedProdducts.length < 1) {
