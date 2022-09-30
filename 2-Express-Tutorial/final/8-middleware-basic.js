@@ -19,7 +19,6 @@ const PORT = 1000
  }
 
 app.get('/', alldate, (req, res) => {
-    alldate()
     console.log("You are on the home page")
     res.send("Welcome to the Home page")
 })
