@@ -91,13 +91,25 @@ app.get('/api/v1/query', (req, res) => {
     }
     if (limit) {
         sortedProdducts = sortedProdducts.slice(0, Number(limit))
+        // return res.status(200).send(
+        //     {
+        //         success: true,
+        //         message: "Products retrieved",
+        //         statusCode: 200,
+        //         data: [...sortedProdducts]
+        //     })
     }
     
     if(sortedProdducts.length < 1) {
-        res.status(200).json("No products were found")
+        res.status(200).send(
+            {
+                success: true,
+                message: "No products were found",
+                statusCode: 200,
+                data: [...sortedProdducts]
+            })
     }
     console.log(sortedProdducts);
-    res.send(sortedProdducts)
 })
 
 app.listen(PORT, () => {
