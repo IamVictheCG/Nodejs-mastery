@@ -11,7 +11,6 @@
     console.log("You are on the home page")
     console.log(`${method}${url}---${dateD}/${dateM}/${dateY} @ ${timeH}: ${timeM}: ${timeS}`)
     next()
-    // return
- }
+    }
 
- module.exports = (alldate)
+ module.exports = alldate
