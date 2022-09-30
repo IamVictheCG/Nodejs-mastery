@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const fs = require('fs')
+const { Module } = require('module')
 // require('../../1-Node-Tutorial/content/subFolder/test.txt')
 const PORT = 1000
 
@@ -97,7 +98,7 @@ app.get('/api/v1/query', (req, res) => {
         //         message: "Products retrieved",
         //         statusCode: 200,
         //         data: [...sortedProdducts]
-        //     })
+        //     })yy
     }
     
     if(sortedProdducts.length < 1) {
@@ -122,3 +123,5 @@ app.get('/api/v1/query', (req, res) => {
 app.listen(PORT, () => {
     console.log('Server is running')
 })
+
+// module.exports = {products, people}
