@@ -2,6 +2,7 @@
 // require('./2-Express-Tutorial/final/5-all-static')
 // require("./2-Express-Tutorial/final/6-basic-json")
 // require("./2-Express-Tutorial/final/7-params-querys")
-require("./2-Express-Tutorial/final/8-middleware-basic")
+// require("./2-Express-Tutorial/final/8-middleware-basic")
+require("./2-Express-Tutorial/final/9-middleware-use")
 
 

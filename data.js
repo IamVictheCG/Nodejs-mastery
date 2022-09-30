@@ -39,6 +39,6 @@ const people = [
   { id: 4, name: 'anna' },
   { id: 5, name: 'emma' },
   { id: 6, name: 'victor' },
-  { id: 7, name: 'Tessy' },
+  { id: 7, name: 'tessy' },
 ]
 module.exports = { products, people }
