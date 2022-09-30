@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     const dateY =  new Date().getFullYear()
 
     console.log("You are on the home page")
-    console.log(`${method}${url}${dateD}/${dateM}/${dateY}`)
+    console.log(`${method}${url}---${dateD}/${dateM}/${dateY}`)
     res.send("Welcome to the Home page")
 })
 
