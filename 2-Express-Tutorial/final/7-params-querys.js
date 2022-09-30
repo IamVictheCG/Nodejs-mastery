@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 // const fs = require('fs')
-require('../../1-Node-Tutorial/content/subFolder/test.txt')
 const {products, people} = require('../../data')
 const PORT = 1000
 
