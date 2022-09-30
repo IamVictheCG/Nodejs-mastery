@@ -110,7 +110,13 @@ app.get('/api/v1/query', (req, res) => {
             })
     }
     console.log(sortedProdducts);
-    
+            return res.status(200).send(
+            {
+                success: true,
+                message: "Products retrieved",
+                statusCode: 200,
+                data: [...sortedProdducts]
+            })
 })
 
 app.listen(PORT, () => {
