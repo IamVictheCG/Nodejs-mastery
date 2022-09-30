@@ -6,7 +6,7 @@ const PORT = 1000
 const alldate = require('../../Logger')
 const alldate = require('../../authorize')
 
-app.use('/', alldate)
+app.use('/', alldate, authorize)
 app.get('/', (req, res) => {
     console.log("You are on the home page")
     res.send("Welcome to the Home page")
