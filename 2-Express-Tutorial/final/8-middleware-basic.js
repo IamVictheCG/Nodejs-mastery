@@ -23,7 +23,7 @@ app.get('/', alldate, (req, res) => {
     res.send("Welcome to the Home page")
 })
 
-app.get('/about', alldate (req, res) => {
+app.get('/about', alldate, (req, res) => {
     console.log('You are on the about page')
     res.send('Welcome to the about page')
 })
