@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const fs = require('fs')
+// require('../../1-Node-Tutorial/content/subFolder/test.txt')
 const PORT = 1000
 
 const {products, people} = require('../../data')
@@ -77,6 +79,19 @@ app.get('/api/products/:id/reviews/:reviewid', (req, res) => {
     res.send('Nice Product')
 })
 
+app.get('/api/v1/query', (req, res) => {
+    console.log(req.query);
+    const { search, limit} = req.query
+    let sortedProdducts = [...products]
+
+    if(search) {
+        sortedProdducts = sortedProdducts.filter((products) => {
+            return products.name.startsWith(search)
+        })
+        return sortedProdducts
+    }
+    res.send("Hello victor")
+})
 
 app.listen(PORT, () => {
     console.log('Server is running')
