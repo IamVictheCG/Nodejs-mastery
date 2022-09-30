@@ -110,6 +110,7 @@ app.get('/api/v1/query', (req, res) => {
             })
     }
     console.log(sortedProdducts);
+    
 })
 
 app.listen(PORT, () => {
