@@ -113,7 +113,7 @@ app.get('/api/v1/query', (req, res) => {
     return res.status(200).send(
         {
             success: true,
-            message: "Products retrieved",
+            message: "Products retrieved successfully",
             statusCode: 200,
             data: [...sortedProdducts]
         })
