@@ -8,7 +8,7 @@ const authorize = (req, res, next) => {
     else{
         res.status(401).send('Unauthorized')
         // next()
-    }
+    }    
 }
 
 module.exports = authorize
