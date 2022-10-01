@@ -1,10 +1,11 @@
 const express = require('express')
+const morgan = require('morgan')
 const app = express()
 const PORT = 1000
 const alldate = require('../../Logger')
 const authorize = require('../../authorize')
 
-app.use([authorize, alldate])
+// app.use([authorize, alldate])
 
 app.use('/', alldate, authorize)
 app.get('/', (req, res) => {
