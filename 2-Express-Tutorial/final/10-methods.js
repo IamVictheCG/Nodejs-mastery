@@ -1,10 +1,9 @@
 const express = require('express')
-const morgan = require('morgan')
 const app = express()
-const PORT = 1000
-
 const { people } = require('../../data')
-app.use(express.static('../methods-public'))
+// require('../../2-Express-Tutorial/methods-public')
+
+app.use(express.static('../../2-Express-Tutorial/methods-public'))
 app.get('/api/people', (req, res) => {
     res.status(200).json({
         sucess: true,
@@ -13,6 +12,7 @@ app.get('/api/people', (req, res) => {
     })
 })
 
+const PORT = 1000
 app.listen(PORT, (req, res) => {
     console.log("Server has been hit")
 })
