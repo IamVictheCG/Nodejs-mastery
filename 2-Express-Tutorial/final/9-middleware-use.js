@@ -18,7 +18,7 @@ app.get('/about', (req, res) => {
     console.log('You are on the about page')
     res.send('Welcome to the about page')
 })
-app.get('/api/products', (req, res) => {
+app.get('/api/products', alldate, (req, res) => {
     console.log('Products')
     res.send('Products')
 })
