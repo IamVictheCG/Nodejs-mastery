@@ -4,7 +4,7 @@ const app = express()
 const PORT = 1000
 
 const { people } = require('../../data')
-app
+app.use(express.static('../methods-public'))
 app.get('/api/people', (req, res) => {
     res.status(200).json({
         sucess: true,
