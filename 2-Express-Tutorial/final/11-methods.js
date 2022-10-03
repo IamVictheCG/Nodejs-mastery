@@ -7,7 +7,7 @@ app.use(express.static('../methods-public'))
 
 app.use(express.json())
 
-ap.get('/', (req, res) => {
+app.get('/', (req, res) => {
 
 })
 
