@@ -1,9 +1,14 @@
 const express = require('express')
 const app = express()
 const { people } = require('../../data')
-// require('../../2-Express-Tutorial/methods-public')
+// const MP =require('../../2-Express-Tutorial/methods-public')
 
-app.use(express.static('../../2-Express-Tutorial/methods-public'))
+app.use(express.static('../methods-public'))
+
+ap.get('/', (req, res) => {
+
+})
+
 app.get('/api/people', (req, res) => {
     res.status(200).json({
         sucess: true,
