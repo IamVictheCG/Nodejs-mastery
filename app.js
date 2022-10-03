@@ -4,4 +4,5 @@
 // require("./2-Express-Tutorial/final/7-params-querys")
 // require("./2-Express-Tutorial/final/8-middleware-basic")
 // require("./2-Express-Tutorial/final/9-middleware-use")
-require('./2-Express-Tutorial/final/10-middleware-options')
+// require('./2-Express-Tutorial/final/10-middleware-options')
+require('./2-Express-Tutorial/final/11-methods')
