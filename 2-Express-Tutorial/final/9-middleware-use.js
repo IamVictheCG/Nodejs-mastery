@@ -5,7 +5,6 @@ const alldate = require('../../Logger')
 const authorize = require('../../authorize')
 
 // app.use([authorize, alldate])
-app.use(morgan('tiny'))
 
 // app.use('/', alldate, authorize)
 app.get('/', (req, res) => {
