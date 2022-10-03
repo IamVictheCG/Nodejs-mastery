@@ -1,15 +1,28 @@
 const express = require('express')
+const { extend } = require('lodash')
 const app = express()
 const { people } = require('../../data')
+const PORT = 1000
 // require('../../2-Express-Tutorial/methods-public')
-// require('../methods-public')
+// require('../../Public')
 
-app.use(express.static('.Public'))
+app.use(express.static('./2-Express-Tutorial/methods-public'))
+app.use(express.urlencoded({extended: false}))
+// app.use(express.urlencoded({extended: true}))
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-// res.send()
+app.post('/login', (req, res) => {
+    console.log(req.body)
+    const { name } = req.body
+    if (name) {
+        return res.status(200).send(`Hello ${name}`)
+    }
+
+    res.status(404).send('User could not be found')
+})
+app.all('*', (req, res) => {
+    res.status(404).send('Page not found')
 })
 
 app.get('/api/people', (req, res) => {
@@ -20,7 +33,6 @@ app.get('/api/people', (req, res) => {
     })
 })
 
-const PORT = 1000
 app.listen(PORT, (req, res) => {
     console.log("Server has been hit")
 })
