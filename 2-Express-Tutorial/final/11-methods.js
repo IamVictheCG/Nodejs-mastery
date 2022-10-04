@@ -22,6 +22,7 @@ app.post('/login', (req, res) => {
     res.status(404).send('User could not be found')
 })
 
+
 app.get('/api/people', (req, res) => {
             res.status(200).json({
                 sucess: true,
