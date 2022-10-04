@@ -94,7 +94,7 @@ app.delete("/api/people/:id", (req, res) => {
     res.status(200).json({
         success: true,
         data: newpeople,
-        statusCode
+        statusCode:
     })
 
 })
