@@ -78,6 +78,21 @@ app.put('/api/people/:id', (req, res) => {
 
 })
 
+app.delete("/api/people/:id", (req, res) => {
+
+    const person = people.find((user) => user.id === Number(req.params.id))
+    
+    if(!person) {
+        return res.status(404).json({
+                    success: false,
+                    message: "This user could not be found",
+                    statusCode: 404
+                })
+    }
+
+    const newpeople = people.filter((user) => user.id = Number)
+
+})
 
 app.all('*', (req, res) => {
     res.status(404).send('Page not found')
