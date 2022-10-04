@@ -23,7 +23,7 @@ app.post('/login', (req, res) => {
 })
 
 
-//Test
+//Test all
 app.get('/api/people', (req, res) => {
             res.status(200).json({
                 sucess: true,
