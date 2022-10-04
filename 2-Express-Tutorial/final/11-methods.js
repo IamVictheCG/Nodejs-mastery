@@ -90,7 +90,7 @@ app.delete("/api/people/:id", (req, res) => {
                 })
     }
 
-    const newpeople = people.filter((user) => user.id = Number9)
+    const newpeople = people.filter((user) => user.id = Number)
 
 })
 
