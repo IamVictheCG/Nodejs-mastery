@@ -23,7 +23,7 @@ app.post('/login', (req, res) => {
 })
 
 
-//Test all these endpoints with 
+//Test all these endpoints with Postman
 app.get('/api/people', (req, res) => {
             res.status(200).json({
                 sucess: true,
