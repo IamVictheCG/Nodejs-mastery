@@ -1,8 +1,8 @@
 const express = require('express')
 const { extend } = require('lodash')
 const app = express()
-const { people } = require('../../data')
-const PORT = 1000
+const {people} = require('../../data')
+const PORT = 1004
 // require('../../2-Express-Tutorial/methods-public')
 // require('../../Public')
 
@@ -21,16 +21,63 @@ app.post('/login', (req, res) => {
 
     res.status(404).send('User could not be found')
 })
-app.all('*', (req, res) => {
-    res.status(404).send('Page not found')
-})
 
 app.get('/api/people', (req, res) => {
-    res.status(200).json({
-        sucess: true,
-        data: people,
-        statusCode: 200
+            res.status(200).json({
+                sucess: true,
+                people,
+                statusCode: 200
+            });
+
+})
+
+app.post('/api/people', (req, res) => {
+    const { name } = req.body
+    if (!name) {
+        return res.status(400).json({
+            success: false,
+            msg:`This field is compulsory`,
+            statusCode: 400
+        })
+    }
+
+    res.status(201).json({
+        Success: true,
+        data: name
     })
+})
+
+app.put('/api/people/:id', (req, res) => {
+    const { id } = req.params
+    const { name } = req.body
+    const person = people.find((user) => user.id === Number(id))
+    // console.log("Hello")
+
+    if(!person) {
+        res.status(400).json({
+            success: false,
+            message: "This user could not be found",
+            statusCode: 400
+        })
+    }
+    
+    const newPeople = people.map((person) => {
+        if(person.id === Number(id)) {
+            person.name = name
+        }
+        return person
+    })
+
+    res.status(200).json({
+        success: true,
+        data: newPeople
+    })
+
+})
+
+
+app.all('*', (req, res) => {
+    res.status(404).send('Page not found')
 })
 
 app.listen(PORT, (req, res) => {

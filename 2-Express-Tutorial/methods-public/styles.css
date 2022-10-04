@@ -218,6 +218,7 @@ button.block {
   background-color: var(--green-light);
 }
 .alert-danger {
+  /* border: #4640b3 3px greenyellow; */
   color: var(--red-dark);
   background-color: var(--red-light);
 }
@@ -337,6 +338,7 @@ nav {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  border: #0a0919 2px saddlebrown;
 }
 h5 + h5 {
   margin-left: 1rem;
@@ -348,4 +350,14 @@ h5 + h5 {
 .alert-danger {
   width: 600px;
   text-align: center;
+  border: #0a0919 2px saddlebrown;
 }
+/* .result {
+  height: 5px;
+  width: 5px;
+} */
+/* .form-alert {
+  border: #0a0919 2px saddlebrown;
+  height: 5px;
+  width: 5px;
+} */
