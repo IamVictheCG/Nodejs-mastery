@@ -71,7 +71,7 @@ app.put('/api/people/:id', (req, res) => {
     res.status(200).json({
         success: true,
         data: newPeople,
-        statusCode: 
+        statusCode: 200
     })
 
 })
