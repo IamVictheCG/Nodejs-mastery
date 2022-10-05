@@ -6,7 +6,7 @@ const app = express()
 const {people} = require('./../../data')
 const PORT = 1004
 app.use(express.urlencoded({extended: false}))
-app.use(express.json())
+// app.use(express.json())
 
 app.use(express.static('./2-Express-Tutorial/methods-public'))
 // app.use("/api/people", peopleRoute)
