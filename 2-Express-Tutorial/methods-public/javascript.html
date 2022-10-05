@@ -50,7 +50,7 @@
         try {
           const { datas } = await axios.get('/api/people')
 
-          const people = datas.datssa.map((person) => {
+          const people = datas.datssas.map((person) => {
             return `<h5>${person.name}</h5>`
           })
           result.innerHTML = people.join('')
