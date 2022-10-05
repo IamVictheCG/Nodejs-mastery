@@ -48,7 +48,7 @@ app.post('/api/people/', (req, res) => {
     if(name) {
         res.status(201).json({
             Success: true,
-            persn: name
+            person: name
         })
     }
 
