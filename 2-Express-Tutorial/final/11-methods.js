@@ -1,16 +1,27 @@
 const express = require('express')
 const { extend } = require('lodash')
 const app = express()
-const {people} = require('../../data')
+// const peopleRoute = require("./routes/People/people")
+// const authRoute = require("./routes/Auth/auth")
+const {people} = require('./../../data')
 const PORT = 1004
-// require('../../2-Express-Tutorial/methods-public')
-// require('../../Public')
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
 
 app.use(express.static('./2-Express-Tutorial/methods-public'))
-app.use(express.urlencoded({extended: false}))
-// app.use(express.urlencoded({extended: true}))
+// app.use("/api/people", peopleRoute)
+// app.use("/login", authRoute)
 
-app.use(express.json())
+
+
+app.get('/api/people/', (req, res) => {
+    res.status(200).json({
+        sucess: true,
+        data: people,
+        statusCode: 200
+    });
+
+})
 
 app.post('/login', (req, res) => {
     console.log(req.body)
@@ -23,17 +34,8 @@ app.post('/login', (req, res) => {
 })
 
 
-//Test all these endpoints with Postman!
-app.get('/api/people', (req, res) => {
-            res.status(200).json({
-                sucess: true,
-                people,
-                statusCode: 200
-            });
 
-})
-
-app.post('/api/people', (req, res) => {
+app.post('/api/people/', (req, res) => {
     const { name } = req.body
     if (!name) {
         return res.status(400).json({
@@ -43,17 +45,19 @@ app.post('/api/people', (req, res) => {
         })
     }
 
-    res.status(201).json({
-        Success: true,
-        data: name
-    })
+    if(name) {
+        res.status(201).json({
+            Success: true,
+            data: name
+        })
+    }
+
 })
 
 app.put('/api/people/:id', (req, res) => {
     const { id } = req.params
     const { name } = req.body
     const person = people.find((user) => user.id === Number(id))
-    // console.log("Hello")
 
     if(!person) {
         res.status(400).json({
@@ -62,18 +66,18 @@ app.put('/api/people/:id', (req, res) => {
             statusCode: 400
         })
     }
-    
+
     const newPeople = people.map((person) => {
-        if(person.id === Number(id)) {
-            person.name = name
-        }
-        return person
+    if(person.id === Number(id)) {
+        person.name = name
+    }
+    return person
     })
 
     res.status(200).json({
-        success: true,
-        data: newPeople,
-        statusCode: 200
+    success: true,
+    data: newPeople,
+    statusCode: 200
     })
 
 })
@@ -81,7 +85,6 @@ app.put('/api/people/:id', (req, res) => {
 app.delete("/api/people/:id", (req, res) => {
 
     const person = people.find((user) => user.id === Number(req.params.id))
-    
     if(!person) {
         return res.status(404).json({
                     success: false,
@@ -92,13 +95,15 @@ app.delete("/api/people/:id", (req, res) => {
 
     const newpeople = people.filter((user) => user.id != Number(req.params.id))
     res.status(200).json({
-        success: true,
-        data: newpeople,
-        statusCode: 200
+    success: true,
+    data: newpeople,
+    statusCode: 200
     })
 
 })
 
+
+//Test all these endpoints with Postman!
 app.all('*', (req, res) => {
     res.status(404).send('Page not found')
 })
